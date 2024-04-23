@@ -1,0 +1,173 @@
+{
+  // vscode meta stuff
+  "workbench.startupEditor": "none",
+  "editor.accessibilitySupport": "off",
+
+  // text editing stuff
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.linkedEditing": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.unicodeHighlight.nonBasicASCII": false,
+
+  "apc.activityBar": {
+    "position": "bottom",
+    "hideSettings": true,
+    "size": 28
+  },
+  "apc.electron": {
+    "titleBarStyle": "hiddenInset",
+    "trafficLightPosition": {
+      "x": 12,
+      "y": 10
+    }
+  },
+  "apc.font.family": "Victor Mono SemiBold",
+  "apc.monospace.font.family": "Victor Mono SemiBold",
+  "apc.statusBar": {
+    "position": "editor-bottom",
+    "height": 28,
+    "fontSize": 12
+  },
+
+  // ui stuff
+  //    font
+  "editor.fontFamily": "Victor Mono SemiBold",
+  "editor.lineHeight": 1.42857, // makes font size 14 have line height of ~20px
+
+  //   cursor
+  "editor.cursorBlinking": "smooth", // smol cursor animation, looks nice
+  "editor.cursorSmoothCaretAnimation": "on", // move cursor smoothly
+
+  // //     top bar
+  "workbench.editor.showTabs": "multiple", // hide tabs
+  "breadcrumbs.enabled": false, // hides breadcrumb path at top of window
+  "window.commandCenter": false, // hides command center at the top of the window. Use cmd+shift+p instead
+  "workbench.layoutControl.enabled": false, // hides those little squares on the top right of the window
+  "workbench.editor.editorActionsLocation": "hidden", // hides the "format" and ellipsis buttons on the top right of the window
+
+  //     minimap
+  "editor.minimap.enabled": false,
+
+  "window.menuBarVisibility": "toggle",
+  "workbench.activityBar.location": "bottom",
+  "window.customTitleBarVisibility": "auto",
+
+  //     bottom bar
+  "workbench.statusBar.visible": true, // hide bottom bar
+
+  //     editor
+  "editor.stickyScroll.enabled": true, // toggle with command palette, zen mode hides gitlens stuff for when you don't need it
+  "editor.wordWrap": "on", // wrap text instead of scrolling horizontally
+
+  //   Theme
+  "workbench.colorTheme": "Catppuccin Macchiato",
+
+  // git stuff
+  "git.openRepositoryInParentFolders": "always",
+  "git.autofetch": true,
+  "git.confirmNoVerifyCommit": false,
+  "git.confirmSync": false,
+  "git.ignoreMissingGitWarning": true,
+  "gitlens.gitCommands.skipConfirmations": [
+    "fetch:command",
+    "stash-push:command",
+    "switch:command",
+    "push:command"
+  ],
+  "gitlens.hovers.currentLine.over": "line",
+
+  // js tooling stuff
+  "typescript.preferences.importModuleSpecifier": "non-relative", // prefer aliases when importing
+  "eslint.options": {
+    "extensions": [".js", ".jsx", ".mdx", ".ts", ".tsx"]
+  },
+  "eslint.validate": [
+    "mdx",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "tailwindCSS.experimental.classRegex": [
+    // enables tailwind autocomplete for specified functions
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cn\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cx\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
+  ],
+  "workbench.editorAssociations": {
+    "{git,gitlens}:/**/*.{md,csv}": "default"
+  },
+  "vscode-office.openOutline": false,
+  "vscode-office.editorTheme": "Auto",
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  },
+
+  //vim stuff
+  "vim.useCtrlKeys": true,
+  "vim.leader": "<Space>",
+  "vim.hlsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // NAVIGATION
+    // switch b/w buffers
+    { "before": ["<S-h>"], "commands": [":bprevious"] },
+    { "before": ["<S-l>"], "commands": [":bnext"] },
+
+    // splits
+    { "before": ["leader", "v"], "commands": [":vsplit"] },
+    { "before": ["leader", "s"], "commands": [":split"] },
+
+    // panes
+    {
+      "before": ["leader", "h"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+    {
+      "before": ["leader", "j"],
+      "commands": ["workbench.action.focusBelowGroup"]
+    },
+    {
+      "before": ["leader", "k"],
+      "commands": ["workbench.action.focusAboveGroup"]
+    },
+    {
+      "before": ["leader", "l"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+    // NICE TO HAVE
+    { "before": ["leader", "w"], "commands": [":w!"] },
+    { "before": ["leader", "q"], "commands": [":q!"] },
+    { "before": ["leader", "x"], "commands": [":x!"] },
+    {
+      "before": ["[", "d"],
+      "commands": ["editor.action.marker.prev"]
+    },
+    {
+      "before": ["]", "d"],
+      "commands": ["editor.action.marker.next"]
+    },
+    {
+      "before": ["<leader>", "c", "a"],
+      "commands": ["editor.action.quickFix"]
+    },
+    { "before": ["leader", "f"], "commands": ["workbench.action.quickOpen"] },
+    { "before": ["leader", "p"], "commands": ["editor.action.formatDocument"] },
+    {
+      "before": ["g", "h"],
+      "commands": ["editor.action.showDefinitionPreviewHover"]
+    },
+    {
+      "before": ["u"],
+      "commands": ["undo"]
+    },
+    {
+      "before": ["<C-r>"],
+      "commands": ["redo"]
+    }
+  ]
+}
